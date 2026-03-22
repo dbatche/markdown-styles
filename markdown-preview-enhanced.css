@@ -1,0 +1,167 @@
+/*
+  Typora-like Markdown preview for VS Code / Cursor.
+  Hosted in dbatche/markdown-styles (public) so jsDelivr can serve it.
+
+  User settings.json:
+    "markdown.styles": [
+      "https://cdn.jsdelivr.net/gh/dbatche/markdown-styles@main/markdown-preview-enhanced.css"
+    ]
+*/
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 900px;
+  margin: 0 auto !important;
+  padding: 28px 36px 56px !important;
+  background-color: #ffffff !important;
+  color: #24292f !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: 1.85em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  padding-bottom: 0.35em;
+  margin: 0 0 0.65em 0;
+  border-bottom: 1px solid #d0d7de !important;
+  color: #1f2328 !important;
+}
+
+h2 {
+  font-size: 1.45em;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 1.5em 0 0.55em 0;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid #eaeef2 !important;
+  color: #1f2328 !important;
+}
+
+h3 {
+  font-size: 1.15em;
+  font-weight: 600;
+  margin: 1.35em 0 0.45em 0;
+  color: #1f2328 !important;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin: 1.1em 0 0.4em 0;
+  color: #1f2328 !important;
+}
+
+p {
+  margin: 0.7em 0;
+}
+
+ul,
+ol {
+  margin: 0.65em 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin: 0.3em 0;
+}
+
+/* Tables — closer to Typora / GitHub */
+table {
+  border-collapse: collapse !important;
+  width: 100%;
+  margin: 1.1em 0;
+  font-size: 0.94em;
+  font-variant-numeric: tabular-nums;
+  border: 1px solid #d0d7de !important;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(31, 35, 40, 0.08);
+}
+
+thead tr {
+  background: linear-gradient(to bottom, #f6f8fa, #eef1f4) !important;
+}
+
+th,
+td {
+  border: 1px solid #d0d7de !important;
+  padding: 10px 14px !important;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-weight: 600 !important;
+  color: #1f2328 !important;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafbfc !important;
+}
+
+tbody tr:hover {
+  background-color: #f0f6fc !important;
+}
+
+/* Inline & fenced code */
+code {
+  font-family: var(
+    --vscode-editor-font-family,
+    ui-monospace,
+    "SF Mono",
+    Menlo,
+    Consolas,
+    monospace
+  );
+  background-color: rgba(175, 184, 193, 0.28) !important;
+  color: #24292f !important;
+  padding: 0.18em 0.45em !important;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+pre {
+  background-color: #f6f8fa !important;
+  color: #24292f !important;
+  border: 1px solid #d0d7de !important;
+  border-radius: 6px;
+  padding: 14px 16px !important;
+}
+
+pre code {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0;
+  font-size: 0.9em;
+}
+
+blockquote {
+  margin: 1em 0;
+  padding: 10px 16px !important;
+  border-left: 4px solid #d0d7de !important;
+  border-radius: 0 4px 4px 0;
+  background: #f6f8fa !important;
+  color: #57606a !important;
+}
+
+a {
+  color: #0969da !important;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none !important;
+  border-top: 1px solid #d8dee4 !important;
+  margin: 1.75em 0 !important;
+  height: 0;
+}
