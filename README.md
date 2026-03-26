@@ -11,9 +11,21 @@ Typora-like CSS for **VS Code / Cursor** Markdown preview, loadable via `markdow
 **Symptom B — you still see a grey fenced code block with `graph TD` / `flowchart` text (no diagram)**
 
 - That means **Mermaid did not run** in that webview. Custom CSS does not execute or block JavaScript; something else is wrong.
-- **Isolate:** Temporarily clear `markdown.styles` and open the **same** preview (same window vs second window). If the diagram appears without your CSS, note it — but usually this test is about **which preview** is open, not the stylesheet.
-- **Check:** Same workspace and settings profile in both windows; `markdown.styles` uses a URL or path the webview can load (broken or blocked CSS should not stop Mermaid, but verify the URL loads).
-- **Check:** Built-in Mermaid vs **Markdown Preview Mermaid** extension — both enabled consistently.
+
+### Install the Mermaid extension (Cursor / VS Code)
+
+Some environments only ship **partial** Mermaid support. Install **Markdown Preview Mermaid Support** so fenced ` ```mermaid ` blocks are always handled by the extension:
+
+```powershell
+cursor --install-extension bierner.markdown-mermaid
+```
+
+Then **reload the window** (`Developer: Reload Window`) and open the Markdown preview again.
+
+### Other checks
+
+- **Isolate:** Temporarily clear `markdown.styles` and open the **same** preview. If the diagram still appears as raw code, the problem is not your stylesheet.
+- **Same** workspace and settings profile in both windows; `markdown.styles` URL loads in a browser (jsDelivr).
 - **Last resort:** Export the diagram as PNG/SVG and use `![alt](file.png)` so rendering does not depend on Mermaid in the preview.
 
 ## Editing
