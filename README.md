@@ -28,6 +28,15 @@ Then **reload the window** (`Developer: Reload Window`) and open the Markdown pr
 - **Same** workspace and settings profile in both windows; `markdown.styles` URL loads in a browser (jsDelivr).
 - **Last resort:** Export the diagram as PNG/SVG and use `![alt](file.png)` so rendering does not depend on Mermaid in the preview.
 
+## Mermaid look (grey, Typora-like)
+
+The stylesheet wraps diagrams in a **light grey panel** (`#f6f8fa`) and softens node/edge colors. In **User** `settings.json`, use the extension’s **neutral** theme (grey tones, not harsh black):
+
+```json
+"markdown-mermaid.lightModeTheme": "neutral",
+"markdown-mermaid.darkModeTheme": "neutral"
+```
+
 ## Editing
 
 Change `markdown-preview-enhanced.css`, commit, push; jsDelivr `@main` picks up after cache TTL (or pin a commit hash in the URL for immediate updates).

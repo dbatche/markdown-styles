@@ -167,16 +167,17 @@ hr {
 }
 
 /* -------------------------------------------------------------------------
-   Mermaid — rendered output is usually div.mermaid > svg (built-in preview or
-   Markdown Preview Mermaid). These rules avoid fighting the diagram: no grey
-   code-block frame, fluid width. If you still see raw ```mermaid source, the
-   preview did not execute Mermaid JS (see README.md); CSS cannot fix that.
+   Mermaid — extension bierner.markdown-mermaid; theme "neutral" is set in
+   settings (markdown-mermaid.*ModeTheme). Below: light grey panel + soften
+   default node/edge colors so diagrams match Typora-like body (not harsh black).
+   If you still see raw ```mermaid source, Mermaid JS did not run (README.md).
    ------------------------------------------------------------------------- */
 .markdown-body .mermaid,
 body .mermaid {
-  background: transparent !important;
-  border: none !important;
-  padding: 1rem 0 !important;
+  background: #f6f8fa !important;
+  border: 1px solid #d0d7de !important;
+  border-radius: 8px !important;
+  padding: 1rem 1.25rem !important;
   margin: 1rem 0 !important;
   overflow-x: auto;
 }
@@ -187,4 +188,42 @@ body .mermaid svg {
   max-width: 100% !important;
   height: auto !important;
   min-width: 0;
+}
+
+/* Soften flowchart / graph nodes: light grey fill, charcoal text, muted edges */
+.markdown-body .mermaid svg .node rect,
+.markdown-body .mermaid svg .node polygon,
+.markdown-body .mermaid svg .node circle,
+.markdown-body .mermaid svg .node ellipse,
+body .mermaid svg .node rect,
+body .mermaid svg .node polygon,
+body .mermaid svg .node circle,
+body .mermaid svg .node ellipse {
+  fill: #eceef2 !important;
+  stroke: #aeb8c6 !important;
+}
+
+.markdown-body .mermaid svg .node .label,
+.markdown-body .mermaid svg .nodeLabel,
+.markdown-body .mermaid svg .nodeLabel text,
+.markdown-body .mermaid svg .edgeLabel p,
+.markdown-body .mermaid svg .edgeLabel text,
+body .mermaid svg .node .label,
+body .mermaid svg .nodeLabel,
+body .mermaid svg .nodeLabel text,
+body .mermaid svg .edgeLabel p,
+body .mermaid svg .edgeLabel text {
+  fill: #24292f !important;
+  color: #24292f !important;
+}
+
+.markdown-body .mermaid svg .edgePath .path,
+body .mermaid svg .edgePath .path {
+  stroke: #8c959f !important;
+}
+
+.markdown-body .mermaid svg .marker,
+body .mermaid svg .marker {
+  fill: #8c959f !important;
+  stroke: #8c959f !important;
 }
