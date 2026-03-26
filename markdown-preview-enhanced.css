@@ -165,3 +165,26 @@ hr {
   margin: 1.75em 0 !important;
   height: 0;
 }
+
+/* -------------------------------------------------------------------------
+   Mermaid — rendered output is usually div.mermaid > svg (built-in preview or
+   Markdown Preview Mermaid). These rules avoid fighting the diagram: no grey
+   code-block frame, fluid width. If you still see raw ```mermaid source, the
+   preview did not execute Mermaid JS (see README.md); CSS cannot fix that.
+   ------------------------------------------------------------------------- */
+.markdown-body .mermaid,
+body .mermaid {
+  background: transparent !important;
+  border: none !important;
+  padding: 1rem 0 !important;
+  margin: 1rem 0 !important;
+  overflow-x: auto;
+}
+
+.markdown-body .mermaid svg,
+body .mermaid svg {
+  display: block;
+  max-width: 100% !important;
+  height: auto !important;
+  min-width: 0;
+}
